@@ -83,7 +83,7 @@ namespace NetCoreBBS.Areas.Admin.Controllers
                 return NotFound();
             }
             var childnodes = _context.TopicNodes.Any(r => r.ParentId == id);
-            if (childnodes) return Content("存在子节点");
+            if (childnodes) return Content("Stored in child nodes");
             _context.TopicNodes.Remove(topicnode);
             _context.SaveChanges();
             return RedirectToAction("Index");
