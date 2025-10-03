@@ -39,7 +39,7 @@ namespace NetCoreBBS.ViewComponents
         /// <returns></returns>
         private List<Topic> GetRankTopics(int top,int days)
         {
-            return db.Topics.Where(r=>r.CreateOn>DateTime.Now.AddDays(-days))
+            return db.Topics.Where(r=>r.CreateOn>DateTime.UtcNow.AddDays(-days))
                 .OrderByDescending(r=>r.ViewCount).Take(top).ToList();
         }
     }

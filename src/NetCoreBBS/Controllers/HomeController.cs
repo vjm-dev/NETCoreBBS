@@ -62,7 +62,7 @@ namespace NetCoreBBS.Controllers
         {
             if (ModelState.IsValid)
             {
-                topic.CreateOn = DateTime.Now;
+                topic.CreateOn = DateTime.UtcNow;
                 topic.Type = TopicType.Normal;
                 _topic.Add(topic);
             }

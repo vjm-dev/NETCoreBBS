@@ -43,7 +43,7 @@ namespace NetCoreBBS.Controllers
         {
             if (ModelState.IsValid&&!string.IsNullOrEmpty(reply.ReplyContent))
             {
-                reply.CreateOn = DateTime.Now;
+                reply.CreateOn = DateTime.UtcNow;
                 _reply.Add(reply);
                 var topic = _topic.GetById(reply.TopicId);
                 topic.LastReplyUserId = reply.ReplyUserId;

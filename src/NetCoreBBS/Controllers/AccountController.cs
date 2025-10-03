@@ -78,7 +78,7 @@ namespace NetCoreBBS.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new User { UserName = model.UserName, Email = model.Email,CreateOn=DateTime.Now,LastTime=DateTime.Now };
+                var user = new User { UserName = model.UserName, Email = model.Email, CreateOn = DateTime.UtcNow, LastTime = DateTime.UtcNow };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

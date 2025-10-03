@@ -40,7 +40,7 @@ namespace NetCoreBBS.Areas.Admin.Controllers
         {
             try
             {
-                node.CreateOn = DateTime.Now;
+                node.CreateOn = DateTime.UtcNow;
                 _context.Add(node);
                 _context.SaveChanges();
                 return RedirectToAction("Index");

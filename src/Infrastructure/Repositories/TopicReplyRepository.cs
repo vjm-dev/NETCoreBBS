@@ -7,7 +7,7 @@ using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
-namespace NetCoreBBS.Infrastructure.Repositorys
+namespace NetCoreBBS.Infrastructure.Repositories
 {
     public class TopicReplyRepository : Repository<TopicReply>, ITopicReplyRepository
     {

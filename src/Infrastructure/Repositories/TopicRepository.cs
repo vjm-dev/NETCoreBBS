@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using NetCoreBBS.Interfaces;
 
-namespace NetCoreBBS.Infrastructure.Repositorys
+namespace NetCoreBBS.Infrastructure.Repositories
 {
     public class TopicRepository : Repository<Topic>,ITopicRepository
     {

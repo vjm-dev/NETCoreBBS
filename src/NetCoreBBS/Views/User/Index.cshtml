@@ -80,7 +80,7 @@
                                     <li class="list-group-item">
                                         <div class="title">
                                             <a href="/topic/@item.TopicId">@item.ReplyContent</a>
-                                            <span class="info">at <abbr class="timeago" title="@item.CreateOn.ToString("yyyy-MM-dd")">@(DateTime.Now.Subtract(item.CreateOn).Days) 天前</abbr></span>
+                                            <span class="info">at <abbr class="timeago" title="@item.CreateOn.ToString("yyyy-MM-dd")">@(DateTime.UtcNow.Subtract(item.CreateOn).Days) 天前</abbr></span>
                                         </div>
                                     </li>
                                 }

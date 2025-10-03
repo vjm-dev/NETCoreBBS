@@ -24,7 +24,7 @@ namespace NetCoreBBS.Middleware
             var url = httpContext.Request.Path.ToString();
             if (!(url.Contains("/css") || url.Contains("/js") || url.Contains("/images") || url.Contains("/lib")))
             {
-                _logger.Info($"Url:{url} IP:{httpContext.Connection.RemoteIpAddress.ToString()} 时间：{DateTime.Now}");
+                _logger.Info($"Url:{url} IP:{httpContext.Connection.RemoteIpAddress.ToString()} 时间：{DateTime.UtcNow}");
             }
             await _next(httpContext);
         }
