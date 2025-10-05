@@ -4,6 +4,11 @@
 # idea
 .idea
 
+# Aspire
+/apphost/
+/service-defaults/
+*.aspire.*
+
 # User-specific files
 *.suo
 *.user

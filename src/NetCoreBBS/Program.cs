@@ -29,8 +29,10 @@ try
     var builder = WebApplication.CreateBuilder(args);
 
     // Configure services
-    builder.Services.AddDbContext<DataContext>(options =>
-        options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+    builder.AddServiceDefaults();
+
+    // Configure PostgreSQL with Aspire
+    builder.AddNpgsqlDbContext<DataContext>("netcorebbs");
 
     builder.Services.AddIdentity<User, IdentityRole>(options =>
     {
@@ -102,6 +104,8 @@ try
     app.MapControllerRoute(
         name: "default",
         pattern: "{controller=Home}/{action=Index}/{id?}");
+
+    app.MapDefaultEndpoints();
 
     app.Run();
 }
